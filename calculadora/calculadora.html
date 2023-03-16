@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style2.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <section class="container">
+
+        <!-- COM A (RE) ENERGISA-->
+        <p>Qual a fase da conta?</p>
+        <select name="fase" id="fase">
+            <option value="30">Monofasico</option>
+            <option value="50">Bifasico</option>
+            <option value="100" selected>Trifasico</option>
+          </select>
+        <label for="valor-energia-eletrica" style="margin-bottom: 15px;">Digite o valor da energia eletrica: </label>
+        <input type="text" id="valor-energia-eletrica" name="valor-energia-eletrica" value="" maxLength={9} placeholder=" R$ 500,00" style="margin-bottom: 15px; width: 300px; height: 50px; border-radius: 15px; font-size: 20px;">
+
+        <label for="iluminacao-publica" style="margin-bottom: 15px;">Digite o valor da iluminacao publica: </label>
+        <input type="text" id="iluminacao-publica" name="iluminacao-publica" value="" maxLength={7} placeholder=" R$ 50,00" step="0.01" min="0.01" style="margin-bottom: 15px; width: 300px; height: 50px; border-radius: 15px; font-size: 20px;">
+
+        <!-- BOLETO (RE) ENERGISA-->
+
+        <label for="consumo" style="margin-bottom: 15px;">Digite o valor do consumo: </label>
+        <input type="text" id="consumo" name="consumo" placeholder=" 500" value="" maxLength={5} style="margin-bottom: 15px; width: 300px; height: 50px; border-radius: 15px; font-size: 20px;">
+
+        <label for="tarifa" style="margin-bottom: 15px;">Digite o valor da tarifa: </label>
+        <input type="text" id="tarifa" name="tarifa" placeholder="1,03302" value="" style="margin-bottom: 15px; width: 300px; height: 50px; border-radius: 15px; font-size: 20px;">
+
+        <!-- Calcular-->
+
+        <button onclick="enviar()" class="btn">Calcular</button>
+
+        <div class="resultado">
+            <div class="descont">
+                O desconto é de <span id="valor-desconto"></span>
+            </div>
+            <div class="valor-total">
+                O valor total a pagar dessa conta é <span id="valor-desc-total"></span>
+            </div>
+            <div class="valor-desc-anual">
+                A economia total em um ano é <span id="valor-anual"></span>
+            </div>
+            <div class="condicoes">
+                Não garantimos até que seja feita a verificação das condições e termos com o comercial.
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src="../js/calculadora.js"></script>
+</html>
